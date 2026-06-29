@@ -1,0 +1,11 @@
+{
+  "name": "purdue-dining",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "tsx tests/run.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2"
+  }
+}

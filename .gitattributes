@@ -1,0 +1,4 @@
+# .gitattributes (in each school submodule)
+/shared       export-ignore
+/tests        export-ignore
+/package.json export-ignore
