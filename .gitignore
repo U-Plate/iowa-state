@@ -2,3 +2,4 @@ node_modules/
 package-lock.json
 tests/report.html
 update_subrepos.sh
+.vs/
