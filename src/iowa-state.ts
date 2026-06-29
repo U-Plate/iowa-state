@@ -116,18 +116,21 @@ class IowaState extends School {
 
     const food: FoodItem = { id, name: sourceItem.name };
 
+    let sourceNutrition = sourceItem.nutrients || {};
+
     // TODO: map your source's nutrition fields onto `food`. Examples:
-    // food.calories = sourceItem.calories;
-    // food.protein = sourceItem.protein;
-    // food.carbs = sourceItem.totalCarbohydrate;
-    // food.totalFat = sourceItem.totalFat;
-    // food.servingSize = sourceItem.servingSize;
+    food.calories = sourceItem.kcal.quantity;
+    food.protein = sourceItem.pro.quantity;
+    food.carbs = sourceItem.cho.quantity;
+    food.totalFat = sourceItem.fat.quantity;
+    food.servingSize = sourceItem.unit_of_measure_name;
 
     // Ingredients as a single plain string (not JSON).
     food.ingredients = sourceItem.ingredients || "";
 
     // Allergens/traits as a JSON-encoded array of strings, e.g. '["Vegan"]'.
-    const labels: string[] = (sourceItem.traits || []).map((t: any) => t.name ?? t);
+    let rawLabels = (sourceItem.allergen || []) + (sourceItem.traits.requirement || []); // Concat traits and allergens into one array
+    const labels: string[] = (rawLabels || []).map((t: any) => t.name ?? t);
     food.labels = JSON.stringify(labels);
 
     return food;
@@ -209,11 +212,16 @@ class IowaState extends School {
 
       let stations = meal.menu_displays.values();
       for (const station of stations ?? []) {
-        for (const item of station.items ?? []) {
-          const id = String(item.id);
-          meals[mealName].push({ id, station: station.name });
-          if (!foodItemsMap.has(id)) foodItemsMap.set(id, item);
+        // Run through each course category (e.g. entrees and sides and condiments)
+          // and then add each food item to the meals list for this meal time.
+        for (const category of station.categories ?? []) {
+            for (const item of category.items ?? []) {
+                const id = String(item.id);
+                meals[mealName].push({ id, station: station.name });
+                if (!foodItemsMap.has(id)) foodItemsMap.set(id, item);
+            }
         }
+
       }
     }
 
