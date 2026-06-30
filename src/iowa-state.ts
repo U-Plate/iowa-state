@@ -337,9 +337,19 @@ class IowaState extends School {
         // TODO: fetch address / coordinates for the hall if your API exposes
         // them. The schedule comes from the hand-maintained generalSchedules.json.
         const address = "";
-        const latitude = "";
-        const longitude = "";
+        let latitude = "";
+        let longitude = "";
         const schedule = JSON.stringify((generalSchedules as Record<string, any>)[hall] ?? {});
+
+        if (latitude == null || longitude == null) {
+          const geoSecret = env.GEO_CONVERSION_KEY;
+          console.log("Fetching geocode for address:", address);
+          const response = await fetch(`https://geocode.maps.co/search?q=${address}&api_key=${geoSecret}`);
+          const geoData = (await response.json()) as any;
+
+          latitude = geoData[0].lat;
+          longitude = geoData[0].lon;
+        }
 
         await storeMetadataInD1(env.DB, {
           school: SCHOOL_ID,
