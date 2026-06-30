@@ -15,7 +15,7 @@ import { Menu } from "@uplate/types/menu";
 // Your school's code. Lowercase, no spaces. Used as the key for everything this
 // school stores and must equal what the backend registers it under.
 // ex: "purdue"
-const SCHOOL_ID = "iowastate";
+const SCHOOL_ID = "iowa-state";
 
 // Your school's College Scorecard "id" (a.k.a. gov code). Look it up at
 // https://collegescorecard.ed.gov — used to attach official school info.
@@ -37,61 +37,60 @@ const MEAL_TIMES = ["Breakfast", "Brunch", "Lunch", "Dinner", "Late Night"];
 // separate array for those and deal with them yourself,
 // as UPlate's backend exclusively uses display names
 const DINING_HALLS = [
-    "Conversations",
-    "Hawthorn",
-    "Charging Station",
-    "Memorial Union Food Court",
-    "Lance and Ellie's",
-    "Lance and Ellie's Express",
-    "The Roasterie",
-    "Heaping Plato",
-    "Richardson Court Marketplace",
-    "Friley Windows",
-    "Clyde's",
-    "Union Drive Marketplace",
-    "Bookends Cafe",
-    "Business Cafe",
-    "Courtyard Cafe",
-    "Design Cafe",
-    "Gentle Doctor Cafe",
-    "Whirlybird's",
-    "Whirlybird's Express",
-    "West Side Market",
-    "West Side Market Express",
-    "East Side Market",
-    "East Side Market Express",
-    "South Side Eats",
-    "Special Diet Kitchen"
+  "Conversations",
+  "Hawthorn",
+  "Charging Station",
+  "Memorial Union Food Court",
+  "Lance and Ellie's",
+  "Lance and Ellie's Express",
+  "The Roasterie",
+  "Heaping Plato",
+  "Richardson Court Marketplace",
+  "Friley Windows",
+  "Clyde's",
+  "Union Drive Marketplace",
+  "Bookends Cafe",
+  "Business Cafe",
+  "Courtyard Cafe",
+  "Design Cafe",
+  "Gentle Doctor Cafe",
+  "Whirlybird's",
+  "Whirlybird's Express",
+  "West Side Market",
+  "West Side Market Express",
+  "East Side Market",
+  "East Side Market Express",
+  "South Side Eats",
+  "Special Diet Kitchen",
 ];
 
 const diningHallIds: Record<string, number> = {
-    "Conversations": 1,
-    "Hawthorn": 8,
-    "Charging Station": 10,
-    "Memorial Union Food Court": 11,
-    "Lance and Ellie's": 19,
-    "Lance and Ellie's Express": 20,
-    "The Roasterie": 21,
-    "Heaping Plato": 22,
-    "Richardson Court Marketplace": 23,
-    "Friley Windows": 30,
-    "Clyde's": 38,
-    "Union Drive Marketplace": 39,
-    "Bookends Cafe": 48,
-    "Business Cafe": 49,
-    "Courtyard Cafe": 50,
-    "Design Cafe": 51,
-    "Gentle Doctor Cafe": 52,
-    "Whirlybird's": 54,
-    "Whirlybird's Express": 55,
-    "West Side Market": 56,
-    "West Side Market Express": 57,
-    "East Side Market": 58,
-    "East Side Market Express": 59,
-    "South Side Eats": 60,
-    "Special Diet Kitchen": 61
+  Conversations: 1,
+  Hawthorn: 8,
+  "Charging Station": 10,
+  "Memorial Union Food Court": 11,
+  "Lance and Ellie's": 19,
+  "Lance and Ellie's Express": 20,
+  "The Roasterie": 21,
+  "Heaping Plato": 22,
+  "Richardson Court Marketplace": 23,
+  "Friley Windows": 30,
+  "Clyde's": 38,
+  "Union Drive Marketplace": 39,
+  "Bookends Cafe": 48,
+  "Business Cafe": 49,
+  "Courtyard Cafe": 50,
+  "Design Cafe": 51,
+  "Gentle Doctor Cafe": 52,
+  "Whirlybird's": 54,
+  "Whirlybird's Express": 55,
+  "West Side Market": 56,
+  "West Side Market Express": 57,
+  "East Side Market": 58,
+  "East Side Market Express": 59,
+  "South Side Eats": 60,
+  "Special Diet Kitchen": 61,
 };
-
 
 class IowaState extends School {
   constructor() {
@@ -102,8 +101,8 @@ class IowaState extends School {
   async processMenus(env: Env, dateOffset: number, isRecursive = false): Promise<boolean[][]> {
     const date = this.dateFromOffset(dateOffset, TIME_ZONE);
     let futures = DINING_HALLS.map(async (hall) => {
-        const raw = await this.fetchAndParseHall(hall, date);
-        return this.processAndStoreDiningCourtMenuData(env, hall, date, raw);
+      const raw = await this.fetchAndParseHall(hall, date);
+      return this.processAndStoreDiningCourtMenuData(env, hall, date, raw);
     });
     let responses = await Promise.all(futures);
     if (isRecursive) {
@@ -173,7 +172,7 @@ class IowaState extends School {
 
     let sourceNutrition = sourceItem.nutrients || {};
 
-    // map your source's nutrition fields onto `food`. 
+    // map your source's nutrition fields onto `food`.
     food.calories = sourceNutrition.kcal?.quantity ?? null;
     food.protein = sourceNutrition.pro?.quantity ?? null;
     food.carbs = sourceNutrition.cho?.quantity ?? null;
@@ -190,17 +189,16 @@ class IowaState extends School {
 
     // Ingredients as a single plain string (not JSON).
     food.ingredients = sourceItem.ingredients || "";
-    
-    
 
     // Allergens/traits as a JSON-encoded array of strings, e.g. '["Vegan"]'.
     if (sourceItem.traits) {
-        let rawLabels = (Object.values(sourceItem.traits.allergen ?? [])).concat(Object.values(sourceItem.traits.requirement ?? [])); // Concat requirement and allergen traits into one array
-        const labels: string[] = (rawLabels ?? []).map((t: any) => t.name ?? t);
-        food.labels = JSON.stringify(labels);
-    }
-    else {
-        food.labels = JSON.stringify([]);
+      let rawLabels = Object.values(sourceItem.traits.allergen ?? []).concat(
+        Object.values(sourceItem.traits.requirement ?? []),
+      ); // Concat requirement and allergen traits into one array
+      const labels: string[] = (rawLabels ?? []).map((t: any) => t.name ?? t);
+      food.labels = JSON.stringify(labels);
+    } else {
+      food.labels = JSON.stringify([]);
     }
 
     return food;
@@ -215,19 +213,19 @@ class IowaState extends School {
     );
   }
 
-    // Parses a time number in the format HHMM into a string in the ISO format 
-    private parseTimeNumber(time: number, dateString: string = "1970-01-01"): string {
-        // Pad the number to ensure it's 4 digits (e.g., '0830' instead of '830')
-        const timeStr = time.toString().padStart(4, "0");
+  // Parses a time number in the format HHMM into a string in the ISO format
+  private parseTimeNumber(time: number, dateString: string = "1970-01-01"): string {
+    // Pad the number to ensure it's 4 digits (e.g., '0830' instead of '830')
+    const timeStr = time.toString().padStart(4, "0");
 
-        const hours = timeStr.substring(0, 2);
-        const minutes = timeStr.substring(2, 4);
+    const hours = timeStr.substring(0, 2);
+    const minutes = timeStr.substring(2, 4);
 
-        // Combine with a full ISO date (defaults to Unix epoch) for valid Date parsing
-        const isoString = `${dateString}T${hours}:${minutes}-05:00`;
+    // Combine with a full ISO date (defaults to Unix epoch) for valid Date parsing
+    const isoString = `${dateString}T${hours}:${minutes}-05:00`;
 
-        return new Date(isoString).toISOString();
-    }
+    return new Date(isoString).toISOString();
+  }
 
   /**
    * Fetch one hall's menu for one date from your source and return it in the
@@ -250,25 +248,22 @@ class IowaState extends School {
     //   const json = await resp.json();
     //
     // Throw on failure — pullRawData()/processMenus() handle each hall in
-      // isolation, so one bad hall won't take down the rest.
+    // isolation, so one bad hall won't take down the rest.
     const url = `https://dining.iastate.edu/api/venue/${diningHallIds[loc]}/menu/${date}`;
-	const options = { method: 'GET' };
-	
+    const options = { method: "GET" };
+
     const response = await fetch(url, options);
     if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
-	const data = await response.json();
-	
-
+    const data = await response.json();
 
     // Throw error if the API response is empty or doesn't contain meals for the given date.
-      // NOTE: If an error is thrown here, it will be caught in the processMenus() method and CAUSE the other halls to fail.
+    // NOTE: If an error is thrown here, it will be caught in the processMenus() method and CAUSE the other halls to fail.
     // if (!data || !data.meals) {
     //     throw new Error(`No meals found for ${loc} on ${date}`);
     // }
 
-
     // Extract the raw meals from the deserialized data.
-    const rawMeals: any[] = (data && data.meals) ? Object.values(data.meals) : [];
+    const rawMeals: any[] = data && data.meals ? Object.values(data.meals) : [];
 
     const meals: Record<string, MealItem[]> = {};
     const mealTimeHours: Record<string, string> = {};
@@ -279,7 +274,10 @@ class IowaState extends School {
 
     let rawMealTimeHours = data.hours[date];
     for (const mealTime of rawMealTimeHours) {
-        mealTimeHours[mealTime.comment] = JSON.stringify({ Start: this.parseTimeNumber(mealTime.starthours, date), End: this.parseTimeNumber(mealTime.endhours, date) });
+      mealTimeHours[mealTime.comment] = JSON.stringify({
+        Start: this.parseTimeNumber(mealTime.starthours, date),
+        End: this.parseTimeNumber(mealTime.endhours, date),
+      });
     }
 
     for (const meal of rawMeals) {
@@ -288,20 +286,19 @@ class IowaState extends School {
 
       meals[mealName] ??= [];
 
-      let stations : any[] = Object.values(meal.menu_displays);
+      let stations: any[] = Object.values(meal.menu_displays);
       for (const station of stations ?? []) {
         // Run through each course category (e.g. entrees and sides and condiments)
-          // and then add each food item to the meals list for this meal time.
+        // and then add each food item to the meals list for this meal time.
         let categories: any[] = Object.values(station.categories);
-          for (const category of categories ?? []) {
-            let items: any[] = Object.values(category.items);
-            for (const item of items ?? []) {
-                const id = String(item.id);
-                meals[mealName].push({ id, station: station.name });
-                if (!foodItemsMap.has(id)) foodItemsMap.set(id, item);
-            }
+        for (const category of categories ?? []) {
+          let items: any[] = Object.values(category.items);
+          for (const item of items ?? []) {
+            const id = String(item.id);
+            meals[mealName].push({ id, station: station.name });
+            if (!foodItemsMap.has(id)) foodItemsMap.set(id, item);
+          }
         }
-
       }
     }
 
