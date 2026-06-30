@@ -294,7 +294,7 @@ class IowaState extends School {
         for (const category of categories ?? []) {
           const items: any[] = Object.values(category.items);
           for (const item of items ?? []) {
-            const id = String(item.oid);
+            const id = this.hashMenuItem(item);
             meals[mealName].push({ id, station: station.name });
             if (!foodItemsMap.has(id)) foodItemsMap.set(id, item);
           }
@@ -362,6 +362,19 @@ class IowaState extends School {
         });
       }),
     );
+  }
+
+  hashMenuItem(food: FoodItem): string {
+    food.id = "";
+    const str = JSON.stringify(food);
+
+    let hash = 0x811c9dc5;
+    for (let i = 0; i < str.length; i++) {
+      hash ^= str.charCodeAt(i);
+
+      hash += (hash << 1) + (hash << 4) + (hash << 7) + (hash << 8) + (hash << 24);
+    }
+    return (hash >>> 0).toString(36);
   }
 }
 
