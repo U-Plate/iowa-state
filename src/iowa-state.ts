@@ -100,11 +100,11 @@ class IowaState extends School {
   // required, this function probably shouldn't be changed unless needed
   async processMenus(env: Env, dateOffset: number, isRecursive = false): Promise<boolean[][]> {
     const date = this.dateFromOffset(dateOffset, TIME_ZONE);
-    let futures = DINING_HALLS.map(async (hall) => {
+    const futures = DINING_HALLS.map(async (hall) => {
       const raw = await this.fetchAndParseHall(hall, date);
       return this.processAndStoreDiningCourtMenuData(env, hall, date, raw);
     });
-    let responses = await Promise.all(futures);
+    const responses = await Promise.all(futures);
     if (isRecursive) {
       console.log("Performing recursive fetch for next 2 days");
       for (const extra of [1, 2]) {
@@ -170,7 +170,7 @@ class IowaState extends School {
 
     const food: FoodItem = { id, name: sourceItem.name };
 
-    let sourceNutrition = sourceItem.nutrients || {};
+    const sourceNutrition = sourceItem.nutrients || {};
 
     // map your source's nutrition fields onto `food`.
     food.calories = sourceNutrition.kcal?.quantity ?? null;
@@ -192,7 +192,7 @@ class IowaState extends School {
 
     // Allergens/traits as a JSON-encoded array of strings, e.g. '["Vegan"]'.
     if (sourceItem.traits) {
-      let rawLabels = Object.values(sourceItem.traits.allergen ?? []).concat(
+      const rawLabels = Object.values(sourceItem.traits.allergen ?? []).concat(
         Object.values(sourceItem.traits.requirement ?? []),
       ); // Concat requirement and allergen traits into one array
       const labels: string[] = (rawLabels ?? []).map((t: any) => t.name ?? t);
@@ -272,7 +272,7 @@ class IowaState extends School {
     // 2) Walk the source menu, grouping items by meal time and collecting the
     //    distinct foods to store. Adapt the field access to your API's shape.
 
-    let rawMealTimeHours = data.hours[date];
+    const rawMealTimeHours = data.hours[date];
     for (const mealTime of rawMealTimeHours) {
       mealTimeHours[mealTime.comment] = JSON.stringify({
         Start: this.parseTimeNumber(mealTime.starthours, date),
@@ -286,13 +286,13 @@ class IowaState extends School {
 
       meals[mealName] ??= [];
 
-      let stations: any[] = Object.values(meal.menu_displays);
+      const stations: any[] = Object.values(meal.menu_displays);
       for (const station of stations ?? []) {
         // Run through each course category (e.g. entrees and sides and condiments)
         // and then add each food item to the meals list for this meal time.
-        let categories: any[] = Object.values(station.categories);
+        const categories: any[] = Object.values(station.categories);
         for (const category of categories ?? []) {
-          let items: any[] = Object.values(category.items);
+          const items: any[] = Object.values(category.items);
           for (const item of items ?? []) {
             const id = String(item.oid);
             meals[mealName].push({ id, station: station.name });
@@ -337,9 +337,19 @@ class IowaState extends School {
         // TODO: fetch address / coordinates for the hall if your API exposes
         // them. The schedule comes from the hand-maintained generalSchedules.json.
         const address = "";
-        const latitude = "";
-        const longitude = "";
+        let latitude = "";
+        let longitude = "";
         const schedule = JSON.stringify((generalSchedules as Record<string, any>)[hall] ?? {});
+
+        if (latitude == null || longitude == null) {
+          const geoSecret = env.GEO_CONVERSION_KEY;
+          console.log("Fetching geocode for address:", address);
+          const response = await fetch(`https://geocode.maps.co/search?q=${address}&api_key=${geoSecret}`);
+          const geoData = (await response.json()) as any;
+
+          latitude = geoData[0].lat;
+          longitude = geoData[0].lon;
+        }
 
         await storeMetadataInD1(env.DB, {
           school: SCHOOL_ID,
