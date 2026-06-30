@@ -294,7 +294,7 @@ class IowaState extends School {
         for (const category of categories ?? []) {
           let items: any[] = Object.values(category.items);
           for (const item of items ?? []) {
-            const id = String(item.id);
+            const id = String(item.oid);
             meals[mealName].push({ id, station: station.name });
             if (!foodItemsMap.has(id)) foodItemsMap.set(id, item);
           }
