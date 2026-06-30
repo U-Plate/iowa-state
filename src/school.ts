@@ -1,3 +1,3 @@
-import { Example } from "./example";
+import { IowaState } from "./iowastate";
 
-export default new Example();
+export default new IowaState();
