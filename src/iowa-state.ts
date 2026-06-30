@@ -272,7 +272,7 @@ class IowaState extends School {
     // 2) Walk the source menu, grouping items by meal time and collecting the
     //    distinct foods to store. Adapt the field access to your API's shape.
 
-    const rawMealTimeHours = data.hours[date];
+    const rawMealTimeHours = data.hours ? data.hours[date] : "";
     for (const mealTime of rawMealTimeHours) {
       mealTimeHours[mealTime.comment] = JSON.stringify({
         Start: this.parseTimeNumber(mealTime.starthours, date),
@@ -379,6 +379,6 @@ class IowaState extends School {
 }
 
 interface APIMenuFormat {
-  meals?: string;
-  hours?: string;
+  meals?: any;
+  hours?: any;
 }
