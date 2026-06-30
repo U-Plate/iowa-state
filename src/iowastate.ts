@@ -244,7 +244,7 @@ class IowaState extends School {
   private async fetchAndParseHall(loc: string, date: string): Promise<HallData> {
     // 1) Fetch your school's menu for this hall + date.
     //
-    // TODO: call your source API. For example:
+    // Calls your source API. For example:
     //   const resp = await fetch(`https://dining.example.edu/menu?hall=${loc}&date=${date}`);
     //   if (!resp.ok) throw new Error(`HTTP ${resp.status} ${resp.statusText}`);
     //   const json = await resp.json();
