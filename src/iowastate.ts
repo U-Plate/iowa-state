@@ -102,8 +102,8 @@ class IowaState extends School {
   async processMenus(env: Env, dateOffset: number, isRecursive = false): Promise<boolean[][]> {
     const date = this.dateFromOffset(dateOffset, TIME_ZONE);
     let futures = DINING_HALLS.map(async (hall) => {
-      const raw = await this.fetchAndParseHall(hall, date);
-      return this.processAndStoreDiningCourtMenuData(env, hall, date, raw);
+        const raw = await this.fetchAndParseHall(hall, date);
+        return this.processAndStoreDiningCourtMenuData(env, hall, date, raw);
     });
     let responses = await Promise.all(futures);
     if (isRecursive) {
@@ -178,7 +178,15 @@ class IowaState extends School {
     food.protein = sourceNutrition.pro?.quantity ?? null;
     food.carbs = sourceNutrition.cho?.quantity ?? null;
     food.totalFat = sourceNutrition.fat?.quantity ?? null;
-    food.servingSize = sourceNutrition.unit_of_measure_name ?? null;
+    food.servingSize = sourceItem.unit_of_measure_name ?? null;
+    food.cholesterol = sourceNutrition.chol?.quantity ?? null;
+    food.sodium = sourceNutrition.na?.quantity ?? null;
+    food.sugar = sourceNutrition.sugar?.quantity ?? null;
+    food.addedSugars = sourceNutrition.addsgr?.quantity ?? null;
+    food.calcium = sourceNutrition.ca?.quantity ?? null;
+    food.iron = sourceNutrition.fe?.quantity ?? null;
+    food.dietaryFiber = sourceNutrition.fibtg?.quantity ?? null;
+    food.saturatedFat = sourceNutrition.sfa?.quantity ?? null;
 
     // Ingredients as a single plain string (not JSON).
     food.ingredients = sourceItem.ingredients || "";
@@ -245,25 +253,22 @@ class IowaState extends School {
       // isolation, so one bad hall won't take down the rest.
     const url = `https://dining.iastate.edu/api/venue/${diningHallIds[loc]}/menu/${date}`;
 	const options = { method: 'GET' };
-
-	let rawData: any;
-	try {
-		const response = await fetch(url, options);
-		const data = await response.json();
-		rawData = data; // Store the raw data for later processing
-	} catch (error) {
-        throw new Error(error.message);
-	}
+	
+    const response = await fetch(url, options);
+    if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
+	const data = await response.json();
+	
 
 
     // Throw error if the API response is empty or doesn't contain meals for the given date.
-    if (!rawData || !rawData.meals) {
-        throw new Error(`No meals found for ${loc} on ${date}`);
-    }
+      // NOTE: If an error is thrown here, it will be caught in the processMenus() method and CAUSE the other halls to fail.
+    // if (!data || !data.meals) {
+    //     throw new Error(`No meals found for ${loc} on ${date}`);
+    // }
 
 
     // Extract the raw meals from the deserialized data.
-    const rawMeals: any[] = Object.values(rawData.meals); 
+    const rawMeals: any[] = (data && data.meals) ? Object.values(data.meals) : [];
 
     const meals: Record<string, MealItem[]> = {};
     const mealTimeHours: Record<string, string> = {};
@@ -272,7 +277,7 @@ class IowaState extends School {
     // 2) Walk the source menu, grouping items by meal time and collecting the
     //    distinct foods to store. Adapt the field access to your API's shape.
 
-    let rawMealTimeHours = rawData.hours[date];
+    let rawMealTimeHours = data.hours[date];
     for (const mealTime of rawMealTimeHours) {
         mealTimeHours[mealTime.comment] = JSON.stringify({ Start: this.parseTimeNumber(mealTime.starthours, date), End: this.parseTimeNumber(mealTime.endhours, date) });
     }
