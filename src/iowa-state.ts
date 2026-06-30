@@ -254,7 +254,7 @@ class IowaState extends School {
 
     const response = await fetch(url, options);
     if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText}`);
-    const data = await response.json();
+    const data = (await response.json()) as APIMenuFormat;
 
     // Throw error if the API response is empty or doesn't contain meals for the given date.
     // NOTE: If an error is thrown here, it will be caught in the processMenus() method and CAUSE the other halls to fail.
@@ -353,4 +353,9 @@ class IowaState extends School {
       }),
     );
   }
+}
+
+interface APIMenuFormat {
+  meals?: string;
+  hours?: string;
 }
