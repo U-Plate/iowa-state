@@ -294,7 +294,7 @@ class IowaState extends School {
         for (const category of categories ?? []) {
           const items: any[] = Object.values(category.items);
           for (const item of items ?? []) {
-            const id = this.hashMenuItem(item);
+            const id = this.hashMenuItem(this.parseItem(item, ""));
             meals[mealName].push({ id, station: station.name });
             if (!foodItemsMap.has(id)) foodItemsMap.set(id, item);
           }
