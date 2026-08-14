@@ -99,24 +99,28 @@ class IowaState extends School {
 
   // required, this function probably shouldn't be changed unless needed
   async processMenus(env: Env, dateOffset: number, isRecursive = false): Promise<boolean[][]> {
-    const date = this.dateFromOffset(dateOffset, TIME_ZONE);
-    const futures = DINING_HALLS.map(async (hall) => {
-      const raw = await this.fetchAndParseHall(hall, date);
-      return this.processAndStoreDiningCourtMenuData(env, hall, date, raw);
-    });
-    const responses = await Promise.all(futures);
+    // Halls are isolated from each other: a hall that throws is logged and
+    // skipped instead of rejecting the batch and losing the whole day's menus.
+    const process = async (offset: number): Promise<boolean[][]> => {
+      const date = this.dateFromOffset(offset, TIME_ZONE);
+      const settled = await Promise.allSettled(
+        DINING_HALLS.map(async (hall) => {
+          const raw = await this.fetchAndParseHall(hall, date);
+          return this.processAndStoreDiningCourtMenuData(env, hall, date, raw);
+        }),
+      );
+      return settled.map((r, i) => {
+        if (r.status === "fulfilled") return r.value;
+        console.error(`IowaState: failed to process ${DINING_HALLS[i]} on ${date}:`, r.reason);
+        return [] as boolean[];
+      });
+    };
+
+    const responses: boolean[][] = await process(dateOffset);
     if (isRecursive) {
       console.log("Performing recursive fetch for next 2 days");
-      for (const extra of [1, 2]) {
-        const nextDate = this.dateFromOffset(dateOffset + extra, TIME_ZONE);
-        const next = await Promise.all(
-          DINING_HALLS.map(async (hall) => {
-            const raw = await this.fetchAndParseHall(hall, nextDate);
-            return this.processAndStoreDiningCourtMenuData(env, hall, nextDate, raw);
-          }),
-        );
-        responses.push(...next);
-      }
+      responses.push(...(await process(dateOffset + 1)));
+      responses.push(...(await process(dateOffset + 2)));
     }
     return responses;
   }
