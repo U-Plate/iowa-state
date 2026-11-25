@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "test": "tsx tests/run.ts"
+    "test": "tsx tests/run.ts",
+    "build:schedules": "tsx scripts/build-general-schedules.ts"
   },
   "devDependencies": {
     "tsx": "^4.19.2"

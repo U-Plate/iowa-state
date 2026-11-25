@@ -1,32 +1,1627 @@
 {
-  "Example Dining Hall": {
-    "Breakfast": {
-      "Sunday": { "Start": "08:00", "End": "10:00" },
-      "Monday": { "Start": "07:00", "End": "10:00" },
-      "Tuesday": { "Start": "07:00", "End": "10:00" },
-      "Wednesday": { "Start": "07:00", "End": "10:00" },
-      "Thursday": { "Start": "07:00", "End": "10:00" },
-      "Friday": { "Start": "07:00", "End": "10:00" },
-      "Saturday": { "Start": "08:00", "End": "10:00" }
-    },
+  "Conversations": {
+    "Breakfast": null,
     "Brunch": null,
     "Lunch": {
-      "Sunday": { "Start": "11:00", "End": "14:00" },
-      "Monday": { "Start": "11:00", "End": "14:00" },
-      "Tuesday": { "Start": "11:00", "End": "14:00" },
-      "Wednesday": { "Start": "11:00", "End": "14:00" },
-      "Thursday": { "Start": "11:00", "End": "14:00" },
-      "Friday": { "Start": "11:00", "End": "14:00" },
-      "Saturday": { "Start": "11:00", "End": "14:00" }
+      "Sunday": {
+        "Start": "14:00",
+        "End": "16:00"
+      },
+      "Monday": {
+        "Start": "10:30",
+        "End": "14:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "14:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "14:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "14:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "14:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "14:00",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "14:00",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "14:00",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "14:00",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "14:00",
+        "End": "16:00"
+      },
+      "Saturday": null
+    },
+    "Dinner": {
+      "Sunday": {
+        "Start": "16:00",
+        "End": "19:00"
+      },
+      "Monday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Friday": null,
+      "Saturday": null
+    }
+  },
+  "Friley Windows": {
+    "Breakfast": null,
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Saturday": null
     },
     "Late Lunch": null,
     "Dinner": {
-      "Sunday": { "Start": "17:00", "End": "21:00" },
-      "Monday": { "Start": "17:00", "End": "21:00" },
-      "Tuesday": { "Start": "17:00", "End": "21:00" },
-      "Wednesday": { "Start": "17:00", "End": "21:00" },
-      "Thursday": { "Start": "17:00", "End": "21:00" },
-      "Friday": { "Start": "17:00", "End": "21:00" },
+      "Sunday": null,
+      "Monday": {
+        "Start": "15:00",
+        "End": "23:00"
+      },
+      "Tuesday": {
+        "Start": "15:00",
+        "End": "23:00"
+      },
+      "Wednesday": {
+        "Start": "15:00",
+        "End": "23:00"
+      },
+      "Thursday": {
+        "Start": "15:00",
+        "End": "23:00"
+      },
+      "Friday": {
+        "Start": "15:00",
+        "End": "20:00"
+      },
+      "Saturday": null
+    }
+  },
+  "Richardson Court Marketplace": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "06:30",
+        "End": "09:30"
+      },
+      "Tuesday": {
+        "Start": "06:30",
+        "End": "09:30"
+      },
+      "Wednesday": {
+        "Start": "06:30",
+        "End": "09:30"
+      },
+      "Thursday": {
+        "Start": "06:30",
+        "End": "09:30"
+      },
+      "Friday": {
+        "Start": "06:30",
+        "End": "09:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": {
+      "Sunday": {
+        "Start": "09:00",
+        "End": "14:00"
+      },
+      "Monday": null,
+      "Tuesday": null,
+      "Wednesday": null,
+      "Thursday": null,
+      "Friday": null,
+      "Saturday": {
+        "Start": "09:00",
+        "End": "14:00"
+      }
+    },
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "11:00",
+        "End": "14:00"
+      },
+      "Tuesday": {
+        "Start": "11:00",
+        "End": "14:00"
+      },
+      "Wednesday": {
+        "Start": "11:00",
+        "End": "14:00"
+      },
+      "Thursday": {
+        "Start": "11:00",
+        "End": "14:00"
+      },
+      "Friday": {
+        "Start": "11:00",
+        "End": "14:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": {
+        "Start": "16:30",
+        "End": "20:00"
+      },
+      "Monday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Tuesday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Wednesday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Thursday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Friday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Saturday": {
+        "Start": "16:30",
+        "End": "20:00"
+      }
+    }
+  },
+  "Union Drive Marketplace": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Tuesday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Wednesday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Thursday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Friday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Saturday": null
+    },
+    "Brunch": {
+      "Sunday": {
+        "Start": "09:00",
+        "End": "14:00"
+      },
+      "Monday": null,
+      "Tuesday": null,
+      "Wednesday": null,
+      "Thursday": null,
+      "Friday": null,
+      "Saturday": {
+        "Start": "09:00",
+        "End": "14:00"
+      }
+    },
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Tuesday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Wednesday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Thursday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Friday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": {
+        "Start": "16:30",
+        "End": "20:00"
+      },
+      "Monday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Tuesday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Wednesday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Thursday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Friday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Saturday": {
+        "Start": "16:30",
+        "End": "20:00"
+      }
+    }
+  },
+  "Special Diet Kitchen": {
+    "Breakfast": {
+      "Sunday": {
+        "Start": "09:00",
+        "End": "10:30"
+      },
+      "Monday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Tuesday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Wednesday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Thursday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Friday": {
+        "Start": "06:30",
+        "End": "10:00"
+      },
+      "Saturday": {
+        "Start": "09:00",
+        "End": "10:30"
+      }
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": {
+        "Start": "10:30",
+        "End": "14:00"
+      },
+      "Monday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Tuesday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Wednesday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Thursday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Friday": {
+        "Start": "11:00",
+        "End": "14:30"
+      },
+      "Saturday": {
+        "Start": "10:30",
+        "End": "14:00"
+      }
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": {
+        "Start": "16:30",
+        "End": "20:00"
+      },
+      "Monday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Tuesday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Wednesday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Thursday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Friday": {
+        "Start": "16:30",
+        "End": "19:30"
+      },
+      "Saturday": {
+        "Start": "16:30",
+        "End": "20:00"
+      }
+    }
+  },
+  "South Side Eats": {
+    "Breakfast": null,
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": {
+        "Start": "11:00",
+        "End": "13:00"
+      },
+      "Monday": null,
+      "Tuesday": null,
+      "Wednesday": null,
+      "Thursday": null,
+      "Friday": null,
+      "Saturday": {
+        "Start": "11:00",
+        "End": "13:00"
+      }
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "17:00",
+        "End": "19:00"
+      },
+      "Tuesday": {
+        "Start": "17:00",
+        "End": "19:00"
+      },
+      "Wednesday": {
+        "Start": "17:00",
+        "End": "19:00"
+      },
+      "Thursday": {
+        "Start": "17:00",
+        "End": "19:00"
+      },
+      "Friday": null,
+      "Saturday": null
+    }
+  },
+  "Hawthorn": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": {
+        "Start": "11:00",
+        "End": "15:30"
+      },
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:15"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:15"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:15"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:15"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "15:15"
+      },
+      "Saturday": {
+        "Start": "11:00",
+        "End": "15:30"
+      }
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": {
+        "Start": "15:30",
+        "End": "20:00"
+      },
+      "Monday": {
+        "Start": "16:15",
+        "End": "22:00"
+      },
+      "Tuesday": {
+        "Start": "16:15",
+        "End": "22:00"
+      },
+      "Wednesday": {
+        "Start": "16:15",
+        "End": "22:00"
+      },
+      "Thursday": {
+        "Start": "16:15",
+        "End": "22:00"
+      },
+      "Friday": {
+        "Start": "15:15",
+        "End": "20:00"
+      },
+      "Saturday": {
+        "Start": "15:30",
+        "End": "20:00"
+      }
+    }
+  },
+  "Memorial Union Food Court": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "16:00",
+        "End": "19:00"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "19:00"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "19:00"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "19:00"
+      },
+      "Friday": null,
+      "Saturday": null
+    }
+  },
+  "Charging Station": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": null
+  },
+  "Lance and Ellie's": {
+    "Breakfast": null,
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Saturday": {
+        "Start": "11:00",
+        "End": "14:00"
+      }
+    },
+    "Late Lunch": null,
+    "Dinner": null
+  },
+  "Lance and Ellie's Express": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:00"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:00"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:00"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:00"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:00"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": null,
+    "Late Lunch": null,
+    "Dinner": null
+  },
+  "The Roasterie": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": null
+  },
+  "Heaping Plato": {
+    "Breakfast": null,
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:00",
+        "End": "14:30"
+      },
+      "Tuesday": {
+        "Start": "10:00",
+        "End": "14:30"
+      },
+      "Wednesday": {
+        "Start": "10:00",
+        "End": "14:30"
+      },
+      "Thursday": {
+        "Start": "10:00",
+        "End": "14:30"
+      },
+      "Friday": {
+        "Start": "10:00",
+        "End": "14:30"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": null
+  },
+  "Clyde's": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "16:00",
+        "End": "20:00"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "20:00"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "20:00"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "20:00"
+      },
+      "Friday": {
+        "Start": "16:00",
+        "End": "18:00"
+      },
+      "Saturday": null
+    }
+  },
+  "West Side Market": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "08:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "08:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "08:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "08:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "08:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": {
+        "Start": "11:00",
+        "End": "16:00"
+      },
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Saturday": {
+        "Start": "11:00",
+        "End": "16:00"
+      }
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Monday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Friday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Saturday": {
+        "Start": "16:00",
+        "End": "22:00"
+      }
+    }
+  },
+  "West Side Market Express": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "08:45",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "08:45",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "08:45",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "08:45",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "08:45",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "16:00",
+        "End": "22:30"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "22:30"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "22:30"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "22:30"
+      },
+      "Friday": {
+        "Start": "16:00",
+        "End": "21:30"
+      },
+      "Saturday": null
+    }
+  },
+  "East Side Market": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": {
+        "Start": "11:00",
+        "End": "16:00"
+      },
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Saturday": {
+        "Start": "11:00",
+        "End": "16:00"
+      }
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Monday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "23:00"
+      },
+      "Friday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Saturday": {
+        "Start": "16:00",
+        "End": "22:00"
+      }
+    }
+  },
+  "East Side Market Express": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:45",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:45",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:45",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:45",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:45",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "16:00",
+        "End": "22:30"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "22:30"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "22:30"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "22:30"
+      },
+      "Friday": {
+        "Start": "16:00",
+        "End": "21:30"
+      },
+      "Saturday": null
+    }
+  },
+  "Bookends Cafe": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": {
+        "Start": "11:00",
+        "End": "16:00"
+      },
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Saturday": {
+        "Start": "11:00",
+        "End": "17:00"
+      }
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Monday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Friday": null,
+      "Saturday": null
+    }
+  },
+  "Business Cafe": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": null
+  },
+  "Courtyard Cafe": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "15:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": null
+  },
+  "Design Cafe": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "17:00"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "16:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": null
+  },
+  "Gentle Doctor Cafe": {
+    "Breakfast": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Tuesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Wednesday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Thursday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Friday": {
+        "Start": "07:30",
+        "End": "10:30"
+      },
+      "Saturday": null
+    },
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:30",
+        "End": "14:30"
+      },
+      "Tuesday": {
+        "Start": "10:30",
+        "End": "14:30"
+      },
+      "Wednesday": {
+        "Start": "10:30",
+        "End": "14:30"
+      },
+      "Thursday": {
+        "Start": "10:30",
+        "End": "14:30"
+      },
+      "Friday": {
+        "Start": "10:30",
+        "End": "14:30"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": null
+  },
+  "Whirlybird's": {
+    "Breakfast": null,
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": {
+        "Start": "13:00",
+        "End": "16:00"
+      },
+      "Monday": {
+        "Start": "10:00",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:00",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:00",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:00",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:00",
+        "End": "16:00"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Monday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "22:00"
+      },
+      "Friday": {
+        "Start": "16:00",
+        "End": "18:00"
+      },
+      "Saturday": null
+    }
+  },
+  "Whirlybird's Express": {
+    "Breakfast": null,
+    "Brunch": null,
+    "Lunch": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "10:15",
+        "End": "16:00"
+      },
+      "Tuesday": {
+        "Start": "10:15",
+        "End": "16:00"
+      },
+      "Wednesday": {
+        "Start": "10:15",
+        "End": "16:00"
+      },
+      "Thursday": {
+        "Start": "10:15",
+        "End": "16:00"
+      },
+      "Friday": {
+        "Start": "10:15",
+        "End": "17:15"
+      },
+      "Saturday": null
+    },
+    "Late Lunch": null,
+    "Dinner": {
+      "Sunday": null,
+      "Monday": {
+        "Start": "16:00",
+        "End": "21:15"
+      },
+      "Tuesday": {
+        "Start": "16:00",
+        "End": "21:15"
+      },
+      "Wednesday": {
+        "Start": "16:00",
+        "End": "21:15"
+      },
+      "Thursday": {
+        "Start": "16:00",
+        "End": "21:15"
+      },
+      "Friday": null,
       "Saturday": null
     }
   }
